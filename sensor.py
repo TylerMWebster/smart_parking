@@ -25,6 +25,7 @@ class sensor():
         self.stat_change = False
 
         GPIO.setmode(GPIO.BOARD)
+        GPIO.setwarnings(False) 
         GPIO.setup(self.PIN_TRIGGER, GPIO.OUT)
         GPIO.setup(self.PIN_ECHO, GPIO.IN)
         GPIO.output(self.PIN_TRIGGER, GPIO.LOW)
