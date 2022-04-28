@@ -23,7 +23,7 @@ try:
     GPIO.output(PIN_TRIGGER, GPIO.LOW)
     while True:
         prev_occupied = occupied
-        print("Waiting for sensor to settle")
+        #print("Waiting for sensor to settle")
 
         time.sleep(1)
 
