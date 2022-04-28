@@ -25,7 +25,7 @@ try:
         prev_occupied = occupied
         #print("Waiting for sensor to settle")
 
-        time.sleep(1)
+        time.sleep(.1)
 
         #print("Calculating distance")
 
