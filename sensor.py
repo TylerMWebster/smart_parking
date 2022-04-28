@@ -64,7 +64,7 @@ class sensor():
     
     def start(self):
         from threading import Thread
-        sensor_thread = Thread(target=self.check_status, args=[self])
+        sensor_thread = Thread(target=self.check_status)
         try:
             sensor_thread.start()
         except:
