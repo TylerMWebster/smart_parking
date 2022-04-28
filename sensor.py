@@ -25,9 +25,9 @@ try:
         prev_occupied = occupied
         print("Waiting for sensor to settle")
 
-        time.sleep(2)
+        time.sleep(1)
 
-        print("Calculating distance")
+        #print("Calculating distance")
 
         GPIO.output(PIN_TRIGGER, GPIO.HIGH)
 
@@ -42,7 +42,7 @@ try:
 
         pulse_duration = pulse_end_time - pulse_start_time
         distance = round(pulse_duration * 17150, 2)
-        print("Distance:",distance,"cm")
+        #print("Distance:",distance,"cm")
 
         if (distance < park_thresh):
             occupied = True
@@ -50,32 +50,12 @@ try:
             occupied = False
         
         if occupied != prev_occupied:
-            print(f'Parking status change to {occupied}')
+            #print(f'Parking status change to {occupied}')
             post_status(device_id, occupied)
         
 
 except:
     print('fail')
-        
-
-
-
-    #       if (distance < park_thresh) {
-    #   occupied = true;
-    # } else {
-    #   occupied = false;
-    # }
-    # if (occupied < 2000 && prev_occupied < 2000) {
-    #   dist = "Distance: " + String(distance);
-    #   display_text(dist, true);
-    #   if (occupied != prev_occupied) {
-    #     stat_change = true;
-    #     display_text("Status change", false);
-    #     delay(1000);
-    #   } else {
-    #     stat_change = false;
-    #   }
-    # }
 
 finally:
     GPIO.cleanup()
