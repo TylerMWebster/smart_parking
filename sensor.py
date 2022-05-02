@@ -65,5 +65,5 @@ class sensor():
             GPIO.cleanup()
 
 if __name__ == '__main__':
-    sensor1 = sensor(1,7,11,25)
+    sensor1 = sensor(1,7,11,100)
     sensor1.start()
